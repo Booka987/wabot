@@ -13,7 +13,7 @@ const qrcode = require("qrcode-terminal")
 const moment = require("moment-timezone")
 const fs = require("fs")
 
-const time = moment().tz('Asia/Jakarta').format("HH:mm:ss")
+const time = moment().ru('Russia/Moscow').format("HH:mm:ss")
 const arrayBulan = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']
 
 const bulan = arrayBulan[moment().format('MM') - 1]
@@ -113,7 +113,7 @@ client.on('message-new', async (m) => {
    console.log(`[ ${time} ] => Nomor: [ ${id.split("@s.whatsapp.net")[0]} ] => ${text}`);
 
    switch (prefix) {
-       case 'menu':
+       case 'меню':
            client.sendMessage(id, menu.menu(id, BotName, tanggal, waktu, instagram, whatsapp, ontime), MessageType.text)
            break
        case 'info':
